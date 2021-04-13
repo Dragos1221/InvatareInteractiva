@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import InfoPage from './pages/InfoPage';
 import Loginpage from './pages/LoginPage';
 import Main from './pages/Main';
 
@@ -28,6 +29,9 @@ class App extends React.Component<AppProps, AppState> {
           </Route>
           <Route exact path = "/main">
             <Main />
+          </Route>
+          <Route exact path = "/page">
+            <InfoPage />
           </Route>
         </Switch>
       </BrowserRouter>
