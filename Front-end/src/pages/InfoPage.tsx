@@ -1,11 +1,14 @@
 import classes from '*.module.css';
 import { createStyles, withStyles } from '@material-ui/core';
+import { eventNames } from 'node:process';
 import * as React from 'react';
 import { withRouter } from 'react-router';
 import AppBar from '../components/Bars/AppBar';
 import NavBar from '../components/Bars/NavBar';
 import Page from '../components/Page';
+import Tests from '../components/Tests';
 import data from '../paragraph/data';
+import data2 from '../paragraph/data2';
 
 export interface InfoPageProps {
     classes: any;
@@ -15,8 +18,11 @@ export interface InfoPageState {
     title:any;
     text:any;
     data:any;
+    data2:any;
     curent:any;
     test:boolean;
+    chestionar: any;
+    rBif: any;
 }
 
 const styles = createStyles({
@@ -49,8 +55,11 @@ class InfoPage extends React.Component<InfoPageProps, InfoPageState> {
             title:'',
             text:'',
             data:[],
+            data2:[],
             curent:0,
             test:false,
+            chestionar: null,
+            rBif: null,
         }
     }
 
@@ -63,7 +72,11 @@ class InfoPage extends React.Component<InfoPageProps, InfoPageState> {
             text:data[Number(id)].paragraphs[0],
             data:data[Number(id)].paragraphs,
             curent:0,
-        })
+            data2:data2,
+            chestionar: data2[0],
+            rBif: 0,
+        });
+        console.log(this.state.data);
     }
 
 
@@ -85,9 +98,14 @@ class InfoPage extends React.Component<InfoPageProps, InfoPageState> {
         }
     }
 
+    handleBifat = (type: any) => (event: React.ChangeEvent<HTMLInputElement>) => {
+        this.setState({rBif: event.target.value});
+        console.log(this.state.rBif);
+    };
+
     returnage= ()=>  <Page title = {this.state.title} text = {this.state.text} next={this.next} />
 
-    returnTest= ()=><div>Dragos</div>; 
+    returnTest= ()=> <Tests intrebare = {data2[0].questions[0].intrebare} raspunsuri = {data2[0].questions[0].variante} raspunsBifat = {this.state.rBif} qNo = {1} handleBifat={this.handleBifat} />
 
     
 
