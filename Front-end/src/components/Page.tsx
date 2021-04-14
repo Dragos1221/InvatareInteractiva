@@ -1,5 +1,6 @@
 import { Button, withStyles } from '@material-ui/core';
 import { createStyles } from '@material-ui/styles';
+import { AnyCnameRecord, AnyPtrRecord } from 'node:dns';
 import * as React from 'react';
 import { Component } from 'react';
 
@@ -7,10 +8,11 @@ export interface PageProps {
     title?: string;
     text?: string;
     classes: any;
+    next:any;
 }
  
 export interface PageState {
-    
+    params: string;
 }
 
 const styles = createStyles({
@@ -55,7 +57,7 @@ class Page extends React.Component<PageProps, PageState> {
                         {text}
                     </div>
                     <div className = {classes.buttonBox}>
-                        <Button variant="contained" color="primary" style ={{float:'right', padding:'15px', paddingLeft:'20px', paddingRight:'20px'}}>
+                        <Button variant="contained" color="primary" style ={{float:'right', padding:'15px', paddingLeft:'20px', paddingRight:'20px'}} onClick={(e:any)=>this.props.next()}>
                             Next
                         </Button>
                     </div>

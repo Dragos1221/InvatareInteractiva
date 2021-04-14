@@ -38,9 +38,10 @@ class NavBar extends React.Component<NavBarProps, NavBarState> {
         }
     }
 
-    makeItem = (item : any) => {
+    makeItem = (item : any , index:any) => {
+        var url = "/page?id="+index;
         return (
-            <Link to = "/" style={{ textDecoration: 'none', color: 'black' }}>
+            <Link to={url}   style={{ textDecoration: 'none', color: 'black' }}>
                 <ListItem button>
                     <Checkbox disabled checked = {item[0]} />
                     <ListItemText primary = {'Cap. ' + item[1] + ''} style = {{marginRight: '10px'}} />
@@ -69,7 +70,7 @@ class NavBar extends React.Component<NavBarProps, NavBarState> {
                             </ListItemText>
                         </ListItem>
                         {
-                            list.map((item : any, index : any) => (this.makeItem(item)))
+                            list.map((item : any, index : any) => (this.makeItem(item,index)))
                         }
                     </List>
                 </Drawer>

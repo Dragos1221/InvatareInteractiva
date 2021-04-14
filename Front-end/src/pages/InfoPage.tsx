@@ -1,16 +1,22 @@
 import classes from '*.module.css';
 import { createStyles, withStyles } from '@material-ui/core';
 import * as React from 'react';
+import { withRouter } from 'react-router';
 import AppBar from '../components/Bars/AppBar';
 import NavBar from '../components/Bars/NavBar';
 import Page from '../components/Page';
+import data from '../paragraph/data';
 
 export interface InfoPageProps {
     classes: any;
 }
  
 export interface InfoPageState {
-    
+    title:any;
+    text:any;
+    data:any;
+    curent:any;
+    test:boolean;
 }
 
 const styles = createStyles({
@@ -39,22 +45,65 @@ class InfoPage extends React.Component<InfoPageProps, InfoPageState> {
 
     constructor(props: InfoPageProps) {
         super(props);
+        this.state={
+            title:'',
+            text:'',
+            data:[],
+            curent:0,
+            test:false,
+        }
     }
+
+    componentDidMount()
+    {  
+        let params = new URLSearchParams(document.location.search.substring(1));
+        let id = params.get("id") || 0; 
+        this.setState({
+            title:data[Number(id)].title,
+            text:data[Number(id)].paragraphs[0],
+            data:data[Number(id)].paragraphs,
+            curent:0,
+        })
+    }
+
+
+    next =()=>{
+        var { curent , data} = this.state;
+        if(curent < data.length-1)
+        {
+            console.log("dsaddas");
+            curent+=1;
+            this.setState({
+                text:data[curent],
+                curent:curent,
+            })
+        }
+        else{
+            this.setState({
+                test:true,
+            })
+        }
+    }
+
+    returnage= ()=>  <Page title = {this.state.title} text = {this.state.text} next={this.next} />
+
+    returnTest= ()=><div>Dragos</div>; 
+
+    
 
     render() { 
         const {classes} = this.props;
         return (
             <div className={classes.pageBox}>
-                <div className = {classes.navBar}>
-                    <NavBar />
-                </div>
                 <div className = {classes.container}>
                     <div>
                         <AppBar firstname='Marcel' lastname = 'Popescu' />
                     </div>
                     <div style = {{position: 'static', marginLeft: '10px', marginTop: '10px'}}>
                         <div className = {classes.continut}>
-                            <Page title = 'titlu' text = {txt} />
+                            {
+                                this.state.test === false? this.returnage():this.returnTest()
+                            }
                         </div>
                     </div>
                 </div>
