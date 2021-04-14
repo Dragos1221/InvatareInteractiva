@@ -1,14 +1,15 @@
 import { Button, createStyles, FormControlLabel, List, ListItem, ListItemText, Radio, RadioGroup, withStyles } from '@material-ui/core';
 import * as React from 'react';
 import { Component } from 'react';
+import { createNumericLiteral } from 'typescript';
+import { chiestionar, intrebari } from '../paragraph/data2';
 
 export interface TestsProps {
     classes: any;
-    intrebare: string;
-    raspunsuri: string[];
-    raspunsBifat: any;
-    qNo: any;
+    chestionar: chiestionar;
     handleBifat:any;
+    raspunsuri: Number[];
+    next: any;
 }
  
 export interface TestsState {
@@ -38,24 +39,33 @@ class Tests extends React.Component<TestsProps, TestsState> {
         super(props);
     }
 
-    render() { 
-        const {raspunsuri, classes} = this.props;
+    listItem = (item: intrebari, index: any) => {
+        return (
+            <ListItem  style = {{display:'flex', flexDirection:'column'}}>
+                {console.log(item)}
+                <div>
+                    {(index + 1) + '. ' + item.intrebare}
+                </div>
+                <div>
+                    <RadioGroup value = {this.props.raspunsuri[index]} onChange={e => this.props.handleBifat(e.target.value, index)}>
+                        <FormControlLabel label = {item.variante[0]} control = {<Radio />} value = {1}/>
+                        <FormControlLabel label = {item.variante[1]} control = {<Radio />} value = {2}/>
+                        <FormControlLabel label = {item.variante[2]} control = {<Radio />} value = {3}/>
+                    </RadioGroup>
+                </div>
+            </ListItem>
+        );
+    }
+
+    render() {
+        const {classes, chestionar} = this.props;
         return (
             <div className = {classes.container}>
-                <div>
-                    <div>
-                        {this.props.qNo + '. ' + this.props.intrebare}
-                    </div>
-                    <div className = {classes.intrebari}>
-                        <RadioGroup value = {this.props.raspunsBifat} onChange={this.props.handleBifat('handleBifat')}>
-                            <FormControlLabel label = {raspunsuri[0]} control = {<Radio />} value = {1}/>
-                            <FormControlLabel label = {raspunsuri[1]} control = {<Radio />} value = {2}/>
-                            <FormControlLabel label = {raspunsuri[2]} control = {<Radio />} value = {3}/>
-                        </RadioGroup>
-                    </div>
-                </div>
+                <List style = {{display:'flex', flexDirection:'column'}}>
+                    {chestionar.questions.map((item:any, index: any) => (this.listItem(item, index)))}
+                </List>
                 <div className = {classes.buttonBox}>
-                    <Button variant="contained" color="primary" style ={{float:'right', padding:'15px', paddingLeft:'20px', paddingRight:'20px'}}>
+                    <Button variant="contained" color="primary" style ={{float:'right', padding:'15px', paddingLeft:'20px', paddingRight:'20px'}} onClick={this.props.next}>
                         Next
                     </Button>
                 </div>

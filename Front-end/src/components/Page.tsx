@@ -10,7 +10,7 @@ export interface PageProps {
     classes: any;
     next:any;
 }
- 
+
 export interface PageState {
     params: string;
 }
