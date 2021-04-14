@@ -84,11 +84,9 @@ class InfoPage extends React.Component<InfoPageProps, InfoPageState> {
     }
 
     handleBifat = (event: any, index: number) => {
-        console.log('event ', event);
         let r2 = this.state.raspunsuri;
         r2[index] = Number(event);
         this.setState({raspunsuri: r2})
-        console.log('state ',  this.state.raspunsuri[index]);
     };
 
     returnage= ()=>  <Page title = {this.state.title} text = {this.state.text} next={this.next} />
@@ -98,8 +96,6 @@ class InfoPage extends React.Component<InfoPageProps, InfoPageState> {
     nextAfterTest = () => {
         let r = this.state.chestionar.raspunsuri;
         let v = this.state.raspunsuri;
-
-        console.log(r, v)
 
         let sum = 0;
         for(var i = 0; i < v.length; ++i) {
