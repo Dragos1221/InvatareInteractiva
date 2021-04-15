@@ -1,4 +1,5 @@
-import { Button, createStyles, FormControlLabel, List, ListItem, ListItemText, Radio, RadioGroup, withStyles } from '@material-ui/core';
+import classes from '*.module.css';
+import { Button, Card, CardContent, createStyles, FormControlLabel, List, ListItem, ListItemText, Radio, RadioGroup, Typography, withStyles } from '@material-ui/core';
 import * as React from 'react';
 import { Component } from 'react';
 import { createNumericLiteral } from 'typescript';
@@ -31,6 +32,22 @@ const styles = createStyles({
     },
     buttonBox : {
         marginTop:'1.5%',
+    },
+    intrebare2: {
+        borderTop: '1px solid #b3e6ff',
+        borderLeft: '1px solid #b3e6ff',
+        borderRight: '1px solid #b3e6ff',
+        background: '#b3e6ff',
+        padding:'5px',
+        fontSize: '15px',
+        width: '70%',
+    },
+    intrebari2: {
+        borderBottom: '1px solid grey',
+        borderRight: '1px solid grey',
+        borderLeft: '1px solid grey',
+        padding:'5px',
+        width: '70%',
     }
 })
  
@@ -42,17 +59,24 @@ class Tests extends React.Component<TestsProps, TestsState> {
     listItem = (item: intrebari, index: any) => {
         return (
             <ListItem  style = {{display:'flex', flexDirection:'column'}}>
-                {console.log(item)}
-                <div>
-                    {(index + 1) + '. ' + item.intrebare}
-                </div>
-                <div>
-                    <RadioGroup value = {this.props.raspunsuri[index]} onChange={e => this.props.handleBifat(e.target.value, index)}>
-                        <FormControlLabel label = {item.variante[0]} control = {<Radio />} value = {1}/>
-                        <FormControlLabel label = {item.variante[1]} control = {<Radio />} value = {2}/>
-                        <FormControlLabel label = {item.variante[2]} control = {<Radio />} value = {3}/>
-                    </RadioGroup>
-                </div>
+                <Card>
+                    <CardContent>
+                        <Typography color="textSecondary" gutterBottom>
+                            {(index + 1) + '. ' + item.intrebare}
+                        </Typography>
+                        <Typography>
+                            <div>
+                                <RadioGroup value = {this.props.raspunsuri[index]} onChange={e => this.props.handleBifat(e.target.value, index)}>
+                                    <FormControlLabel label = {item.variante[0]} control = {<Radio />} value = {1}/>
+                                    <FormControlLabel label = {item.variante[1]} control = {<Radio />} value = {2}/>
+                                    <FormControlLabel label = {item.variante[2]} control = {<Radio />} value = {3}/>
+                                </RadioGroup>
+                            </div>
+                        </Typography>
+                    </CardContent>
+                </Card>
+
+                
             </ListItem>
         );
     }
