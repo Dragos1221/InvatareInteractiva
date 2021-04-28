@@ -21,7 +21,6 @@ const styles = createStyles({
     container : {
         display: 'flex',
         flexDirection: 'column',
-
     },
     intrebari : {
         display: 'flex',
@@ -40,7 +39,7 @@ class Tests extends React.Component<TestsProps, TestsState> {
 
     listItem = (item: intrebari, index: any) => {
         return (
-            <ListItem  style = {{display:'flex', flexDirection:'column'}}>
+            <ListItem  style = {{display:'flex'}}>
                 <Card>
                     <CardContent>
                         <Typography color="textSecondary" gutterBottom>

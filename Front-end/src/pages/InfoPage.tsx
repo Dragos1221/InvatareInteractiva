@@ -94,6 +94,7 @@ class InfoPage extends React.Component<InfoPageProps, InfoPageState> {
     returnTest= ()=> <Tests chestionar={this.state.chestionar} handleBifat={this.handleBifat} raspunsuri = {this.state.raspunsuri} next={this.nextAfterTest}/>
 
     nextAfterTest = () => {
+        console.log("am ajuns");
         let r = this.state.chestionar.raspunsuri;
         let v = this.state.raspunsuri;
 
@@ -105,8 +106,7 @@ class InfoPage extends React.Component<InfoPageProps, InfoPageState> {
 
         let med = sum / v.length * 100;
         console.log(med);
-        // let history = useHistory();
-        // history.push('/main');
+        window.location.assign('./main');
     }
 
     render() {
