@@ -1,7 +1,7 @@
 const { createPool} = require('mysql');
 
 
-const pool =createPool({
+const pool=createPool({
     host:"bqv1nttbika0xi8qr6uu-mysql.services.clever-cloud.com",
     user:"uonm0t7okayn3mce",
     password:"t9ooNVBKHElysKoMAJtp",
@@ -12,5 +12,4 @@ const pool =createPool({
 
 module.exports = {
     connection: pool,
-
 };
