@@ -84,9 +84,6 @@ class Main extends React.Component<MainProps, MainState> {
                         <AppBar firstname='Marcel' lastname = 'Popescu' />
                     </div>
                     <div style = {{position: 'static', marginLeft: '10px', marginTop: '10px'}}>
-                        In div-ul asta scrii si nicaieri altundeva !!!
-                        <br />
-                        Daca vrei sa faci o pagina noua, copiezi pagina asta asa cum e si tot in div-ul asta scrii !!!
                     </div>
                 </div>
             </div>
