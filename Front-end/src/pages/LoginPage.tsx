@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Login from '../components/Login';
 import { RouteComponentProps, withRouter } from 'react-router-dom';
-//import ServiceApi from 'src/remote/ServiceApi';
+import ServiceApi from '../remote/ServiceApi'
 
 interface LoginPageProps extends RouteComponentProps {}
 
@@ -13,7 +13,7 @@ interface LoginPageState {
 }
 
 class LoginPage extends React.Component<LoginPageProps, LoginPageState> {
-	//private service: ServiceApi;
+	private service: ServiceApi;
 	constructor(props: LoginPageProps) {
 		super(props);
 		this.state = {
@@ -22,7 +22,7 @@ class LoginPage extends React.Component<LoginPageProps, LoginPageState> {
 			isError: false,
 			errorMessage: 'Parola nu este corecta.',
 		};
-		//this.service = new ServiceApi();
+		this.service = new ServiceApi();
 	}
 
 	handleChange = (data: any) => {
@@ -39,18 +39,21 @@ class LoginPage extends React.Component<LoginPageProps, LoginPageState> {
 	}
 
 	submit = async() => {
-	// 	try {
-	// 		const result = await this.service.loginRequest(this.state);
-	// 		const token = result.data;
-	// 		localStorage.setItem('token', token);
-	// 		this.props.history.push('/main');
-	// 	} catch (error) {
-	// 		//const { response } = error;
-	// 		this.setState({
-	// 			isError: true,
-	// 		});
-	// 		this.clearUserData();
-	// 	}
+		try {
+			const result = await this.service.loginRequest(this.state);
+			if(result.data.loginStatus === "ok")
+			{
+				localStorage.setItem("id", result.data.id);
+				this.props.history.push('/main');
+			}
+			else
+				throw 'Parameter is not a number!';
+		} catch (error) {
+			this.setState({
+				isError: true,
+			});
+			this.clearUserData();
+		}
 	 };
 
 	render() {

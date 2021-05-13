@@ -67,7 +67,7 @@ class Tests extends React.Component<TestsProps, TestsState> {
                 </List>
                 <div className = {classes.buttonBox}>
                     <Button variant="contained" color="primary" style ={{float:'right', padding:'15px', paddingLeft:'20px', paddingRight:'20px'}} onClick={this.props.next}>
-                        Next
+                        Submit
                     </Button>
                 </div>
             </div>
