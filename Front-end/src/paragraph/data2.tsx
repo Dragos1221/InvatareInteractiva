@@ -54,7 +54,6 @@ const chestionar2: chiestionar = {
     raspunsuri: ranspunsuri2,
 }
 
-<<<<<<< HEAD
 const intrebari3: intrebari[] = [
     {
         intrebare: "Practicile specifice HRM pot fi utilizate pentru:",
@@ -220,37 +219,19 @@ const intrebari4: intrebari[] = [
 
 const raspunsuri4 = [1, 3, 1, 1];
 
-const chestionar4 = {
+const chestionar4: chiestionar = {
     questions: intrebari4,
     raspunsuri: raspunsuri4,
 }
 
-export default [chestionar2, chestionar3, chestionar4];
-=======
-const intrebari2: intrebari[] =[
-    {
-    intrebare:"Practicile specifice HRM pot fi utilizate pentru",
-    variante:["a sprijini activitățile de gestionare a cunoștințelor","creșterea abilităților tehnice"," creșterea motivației angajaților"]
-    },
-    {
+const chestionar1: chiestionar = {
+    questions: [],
+    raspunsuri: [],
+}
 
-        intrebare:"Prin recrutarea de personal, ale căror valori și norme sunt compatibile cu cele care există într-o organizație, noii angajați ar putea",
-        variante:["dezvolta un puternic sentiment de identitate cu angajatorul și colegii de muncă;"," avea un nivel ridicat de stimă de sine","dezvolta abilități de comunicare și muncă în echipă"],
-    },  
-    {
-        intrebare:"Conform Yalabik et al. (2017), oferirea unei formări adecvate lucrătorilor din domeniul cunoştinţelor poate fi o modalitate cheie de a contribui la dezvoltarea :",
-        variante:["Loialităţii angajaţilor","Cunoştinţelor angajaţilor","Relaţiilor interpersonale între angajaţi"]
+const chestionar5: chiestionar = {
+    questions: [],
+    raspunsuri: [],
+}
 
-    },
-    {
-        intrebare:"Conform Kase et al. (2009), unul dintre beneficiile formării legate de cunoştinţe este că facilitează dezvoltarea :",
-        variante:["Cunoştinţelor angajaţilor","Loialităţii angajaţilor"," Relaţiilor interpersonale între angajaţi"]
-    }]
-    const ranspunsuri2=[1,1,1,3];
-    const chestionar2: chiestionar = {
-        questions: intrebari2,
-        raspunsuri: ranspunsuri2,
-    }
-
-export default [{questions:[],raspunsuri:[]},chestionar1,chestionar2];
->>>>>>> main
+export default [chestionar1, chestionar2, chestionar3, chestionar4, chestionar5];
