@@ -1,0 +1,8 @@
+.modal{
+    background-color: silver;
+    opacity: 1;
+    display:flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+}

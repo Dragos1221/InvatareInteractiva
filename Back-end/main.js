@@ -2,10 +2,11 @@ const express = require('express')
 const bodyParser = require("body-parser");
 const route = require('./routes')
 const app = express()
+var cors = require('cors');
 app.use(bodyParser.json());
 
 const {connection}  = require("./database");
- 
+app.use(cors());
 app.get('/questions', function (req, res) {
   connection.query('select * from Questions', (err, rows, fields) => {
     if (err) {
@@ -24,7 +25,7 @@ app.get("/results/:id", (req, res) => {
       res.send(JSON.stringify({status : 'fail'}))
       return;
     }
-    res.send(JSON.stringify(rows))
+    res.send(JSON.stringify(rows[0]))
   })
 });
 
@@ -42,6 +43,7 @@ app.post("/results/:id", (req, res) => {
 })
 
 app.post("/login", (req, res) => {
+  console.log("daa");
   connection.query(`SELECT * from Users WHERE username='${req.body.username}' AND password='${req.body.password}'`, (err, rows, fields) => {
     if (err) {
       console.log(err);
@@ -50,7 +52,8 @@ app.post("/login", (req, res) => {
     }
     if (rows.length === 1)
       res.send(JSON.stringify({
-        loginStatus : 'ok'
+        loginStatus : 'ok',
+        id:rows[0].id
       }))
     else
       res.send(JSON.stringify({
@@ -73,4 +76,6 @@ app.post("/register", (req, res) => {
 })
 
  
-app.listen(3123)
+app.listen(3123, ()=>{
+  console.log("am portnit");
+})

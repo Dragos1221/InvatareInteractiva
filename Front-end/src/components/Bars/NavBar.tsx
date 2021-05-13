@@ -1,9 +1,11 @@
 import { Checkbox, createStyles, Drawer, List, ListItem, ListItemText, withStyles } from '@material-ui/core';
 import * as React from 'react';
 import { Link } from 'react-router-dom';
+import ReactSpeedometer from "react-d3-speedometer"
 
 export interface NavBarProps {
     classes: any;
+    list:any;
 }
  
 export interface NavBarState {
@@ -12,7 +14,8 @@ export interface NavBarState {
 
 const styles = createStyles({
     paper: {
-        background: '#e6e6ff'
+        background: '#e6e6ff',
+        position:"inherit"
     },
 })
 
@@ -40,19 +43,37 @@ class NavBar extends React.Component<NavBarProps, NavBarState> {
 
     makeItem = (item : any , index:any) => {
         var url = "/page?id="+index;
+        const divStyle = {
+          
+          };
         return (
             <Link to={url}   style={{ textDecoration: 'none', color: 'black' }}>
                 <ListItem button>
                     <Checkbox disabled checked = {item[0]} />
                     <ListItemText primary = {'Cap. ' + item[1] + ''} style = {{marginRight: '10px'}} />
-                    <ListItemText primary = {item[2] + '%'} />
+                    <ListItemText  > 
+                        <div style={divStyle}>
+                            <ReactSpeedometer
+                                maxValue={100}
+                                value={item[2]}
+                                needleColor="red"
+                                startColor="green"
+                                segments={5}
+                                endColor="blue"
+                                paddingHorizontal={0}
+                                paddingVertical={0}
+                                width={150}
+                                height={150}
+                            />
+                        </div>
+                    </ListItemText>
                 </ListItem>
             </Link>
         );
     }
 
     render() { 
-        const {list} = this.state;
+        const {list} = this.props;
         const {classes} = this.props;
         return (
             <div>
