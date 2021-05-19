@@ -56,13 +56,14 @@ class Main extends React.Component<MainProps, MainState> {
     
     async componentDidMount(){
         try{
+            var ll:String[]=["Introducere","De ce practicile HRM sunt importante pentru managementul cunoștințelor?","Practici HRM și managementul cunoștințelor","Managementul resurselor umane, retenția personalului și managementul cunoștințelor","Concluzii"]
             const id = localStorage.getItem("id");
             const result = await this.service.getResukts(id);
             console.log(result);
             const l = [result.data.chapter1,result.data.chapter2,result.data.chapter3,result.data.chapter4,result.data.chapter5]
             var list: any[][]=[];
             l.forEach((elem:any , index:any) =>{
-                list.push([elem>=50?true:false,index,elem]);
+                list.push([elem>=50?true:false,index,elem,ll[index]]);
             })
             console.log(list);
             this.setState({
@@ -85,16 +86,16 @@ class Main extends React.Component<MainProps, MainState> {
                         <AppBar firstname='Marcel' lastname = 'Popescu' />
                     </div>
                     <div style = {{position: 'static',width:"100%",height:"100%"}}>
-                        <div style = {{display:"flex",justifyContent:"center"}}>
-                            <img src="ubb.jpg" alt="Girl in a jacket"  width="400px" height="300px"/>
+                        <div style = {{display:"flex",justifyContent:"center",marginBottom:"80px",marginTop:"10px"}}>
+                            <img src="ubb.jpg" alt="Girl in a jacket"  width="400px" height="300px" />
                         </div>
                         <div style = {{display:"flex",justifyContent:"space-around"}}>
                             <img src="mate.png" alt="Girl in a jacket" />
                             <img src="psiho.png" alt="Girl in a jacket"  />
                         </div>
-                        <div style = {{display:"flex",justifyContent:"center"}}>
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, tempore similique id atque praesentium illo aliquam porro blanditiis vel odio, cum, hic quos facilis ipsam quod asperiores a sapiente pariatur!
+                        <div style = {{display:"flex",justifyContent:"center",marginLeft:"10%",marginRight:"10%" , marginTop:"50px" , fontSize:"40px"}}>
+                                <p style = {{fontFamily:"Times New Roman", textAlign:"center" , color:"blue"}}>
+                                    Aceasta este o platforma de învățare interactiva pentru însușirea abilităților de management ai cunoștințelor prin practici de resurse umane creata de studentii Facultatii de Matematica si Informatica in colaborare cu masteranzii de la Facultatea de Pshihologie si Stiinte ale Educatiei.
                                 </p>
                         </div>
                     </div>

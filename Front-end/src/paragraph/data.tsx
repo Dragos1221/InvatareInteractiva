@@ -18,7 +18,7 @@ const para28 = "Flinchbaugh și colab. (2016) au examinat impactul practicilor d
 
 const paragraph2 ={
     title:"De ce practicile HRM sunt importante pentru managementul cunoștințelor?",
-    paragraphs:[anuntP2, para21 ,para22 , para23 , para24, para25, para26, para27, para28,"Ai terimnat partea teoretica si acum urmeaza sa dai un test sadsadaslfjlfaslfjaslfjaslfjaslfjaslfjaslfjaslfjasflf"],
+    paragraphs:[anuntP2, para21 ,para22 , para23 , para24, para25, para26, para27, para28,"FELICITARI! Ai terminat capitolul!!! Urmeaza sa dai un mic test la care pentru al promova trebuie sa obii un punctaj de 50 de punte!Succes!"],
     test:true,
 }
 
@@ -51,7 +51,7 @@ const para325 = "În cele din urmă, un număr tot mai mare de cercetători suge
 
 const paragraph3 = {
     title: titlu3,
-    paragraphs: [anuntP3, para31, para32, para33, para34, para35, para36, para37, para38, para39, para311, para312, para313, para314, para315, para316, para317, para318, para319, para320,  para321,  para322,  para323,  para324,  para325 ],
+    paragraphs: [anuntP3, para31, para32, para33, para34, para35, para36, para37, para38, para39, para311, para312, para313, para314, para315, para316, para317, para318, para319, para320,  para321,  para322,  para323,  para324,  para325,"FELICITARI! Ai terminat capitolul!!! Urmeaza sa dai un mic test la care pentru al promova trebuie sa obii un punctaj de 50 de punte!Succes!" ],
     test:true
 }
 
@@ -66,7 +66,7 @@ const para46 = "Alvesson (2000) argumentează faptul că una dintre cele mai bun
 
 const paragraph4 = {
     title: titlu4,
-    paragraphs: [anuntP4, para41, para42, para43, para44, para45, para46],
+    paragraphs: [anuntP4, para41, para42, para43, para44, para45, para46,"FELICITARI! Ai terminat capitolul!!! Urmeaza sa dai un mic test la care pentru al promova trebuie sa obii un punctaj de 50 de punte!Succes!"],
     test:true
 }
 

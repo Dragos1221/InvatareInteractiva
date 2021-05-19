@@ -45,7 +45,7 @@ class NavBar extends React.Component<AppBarProps, AppBarState> {
                         <div className={classes.itemMargin}>
                             {firstname && lastname && (
                                         <Typography variant="h6" className={classes.username}>
-                                            {`${firstname} ${lastname}`}
+                                            {`${localStorage.getItem('numeII')}`}
                                         </Typography>
                             )}
                         </div>

@@ -9,6 +9,8 @@ export interface PageProps {
     text?: string;
     classes: any;
     next:any;
+    curentPage:any;
+    totalPages:any;
 }
 
 export interface PageState {
@@ -60,6 +62,7 @@ class Page extends React.Component<PageProps, PageState> {
                         <Button variant="contained" color="primary" style ={{float:'right', padding:'15px', paddingLeft:'20px', paddingRight:'20px'}} onClick={(e:any)=>this.props.next()}>
                             Next
                         </Button>
+                        <span style ={{float:'right', padding:'15px', paddingLeft:'20px', paddingRight:'20px', fontSize:"30px"}}>{this.props.curentPage}/{this.props.totalPages}</span>
                     </div>
                 </div>
             </div>

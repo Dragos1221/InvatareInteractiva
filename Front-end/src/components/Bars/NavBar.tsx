@@ -50,7 +50,7 @@ class NavBar extends React.Component<NavBarProps, NavBarState> {
             <Link to={url}   style={{ textDecoration: 'none', color: 'black' }}>
                 <ListItem button>
                     <Checkbox disabled checked = {item[0]} />
-                    <ListItemText primary = {'Cap. ' + item[1] + ''} style = {{marginRight: '10px' , width:"40%"}} />
+                    <ListItemText primary = {item[3]} style = {{marginRight: '10px' , width:"40%"}} />
                     <ListItemText  > 
                         <div style={divStyle}>
                             <ReactSpeedometer

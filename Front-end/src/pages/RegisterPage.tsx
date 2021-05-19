@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Component } from 'react';
 import Register from '../components/Register';
+import ServiceApi from '../remote/ServiceApi';
 
 export interface RegisterPageProps {
     
@@ -22,7 +23,7 @@ export interface RegisterPageState {
 }
  
 class RegisterPage extends React.Component<RegisterPageProps, RegisterPageState> {
-    
+    private service: ServiceApi;
     constructor(props: RegisterPageProps) {
         super(props);
         this.state = {
@@ -39,6 +40,7 @@ class RegisterPage extends React.Component<RegisterPageProps, RegisterPageState>
             errorMPassword: '',
             errorMConfirmPassword: '',
         }
+        this.service = new ServiceApi();
     }
 
 	handleChange = (data: any) => {
@@ -101,8 +103,21 @@ class RegisterPage extends React.Component<RegisterPageProps, RegisterPageState>
         return val;
     }
 
-    register = () => {
-        this.validate()
+    register = async () => {
+        if (this.validate()){
+            try {
+                const { username , nume, password } = this.state;
+                const result = await this.service.registerRequest({username,password,nume});
+                if(result.data.status === "ok")
+                {
+                    window.location.assign('./');
+                }
+                else
+                    throw 'Parameter is not a number!';
+            } catch (error) {
+               alert("Nu te-ai inregistrat!")
+            }
+         };
     }
 
     render() { 

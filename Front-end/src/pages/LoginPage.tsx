@@ -44,6 +44,7 @@ class LoginPage extends React.Component<LoginPageProps, LoginPageState> {
 			if(result.data.loginStatus === "ok")
 			{
 				localStorage.setItem("id", result.data.id);
+				localStorage.setItem("numeII", result.data.nume);
 				this.props.history.push('/main');
 			}
 			else

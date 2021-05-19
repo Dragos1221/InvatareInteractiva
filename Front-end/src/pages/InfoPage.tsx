@@ -135,7 +135,7 @@ class InfoPage extends React.Component<InfoPageProps, InfoPageState> {
         this.setState({raspunsuri: r2})
     };
 
-    returnage= ()=>  <Page title = {this.state.title} text = {this.state.text} next={this.next} />
+    returnage= ()=>  <Page title = {this.state.title} text = {this.state.text} next={this.next} curentPage={this.state.curent} totalPages={this.state.data.length-1}/>
 
     returnTest= ()=> <Tests chestionar={this.state.chestionar} handleBifat={this.handleBifat} raspunsuri = {this.state.raspunsuri} next={this.nextAfterTest}/>
 
@@ -155,16 +155,17 @@ class InfoPage extends React.Component<InfoPageProps, InfoPageState> {
             return(
             <div>
                 <p className="text">{this.state.modalMessage}</p>
-                <Button variant="contained" color="secondary" onClick={()=> this.goToMain()}>Next</Button>
+                <Button variant="contained" color="secondary" onClick={()=> this.goToMain()}>Revina la meniu</Button>
             </div>)
         }
         else{
             return(
             <div>
                 <p className="text">{this.state.modalMessage}</p>
-                <Button variant="contained" color="secondary" onClick={()=> this.goToChapterStart()}>Reia capitolul</Button>
-                <Button variant="contained" color="secondary" >Reia testul</Button>
-                <Button variant="contained" color="secondary"onClick={()=> this.goToMain()}>Revina la meniu</Button>
+                <div style = {{display:"flex",justifyContent:"space-around"}}>
+                    <Button variant="contained" color="secondary" onClick={()=> this.goToChapterStart()}>Reia capitolul</Button>
+                    <Button variant="contained" color="secondary"onClick={()=> this.goToMain()}>Revina la meniu</Button>
+                </div>
             </div>)
         }
     }
@@ -193,14 +194,16 @@ class InfoPage extends React.Component<InfoPageProps, InfoPageState> {
                 }
                 this.setState({
                     modalMessage:`Bravo ai obtinut un punctaj de ${med} si ai promovat`,
-                    modal:true
+                    modal:true,
+                    pass:true,
                 })
             }
             else
             {
                 this.setState({
                     modalMessage:`Din pacate nu ai promovat testul , punctajul a fost de ${med}, poti sa alegi una din urmatoarele variante`,
-                    modal:true
+                    modal:true,
+                    pass:false
                 }) 
             }
     }

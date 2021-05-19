@@ -53,7 +53,8 @@ app.post("/login", (req, res) => {
     if (rows.length === 1)
       res.send(JSON.stringify({
         loginStatus : 'ok',
-        id:rows[0].id
+        id:rows[0].id,
+        nume:rows[0].nume
       }))
     else
       res.send(JSON.stringify({
@@ -63,7 +64,7 @@ app.post("/login", (req, res) => {
 });
 
 app.post("/register", (req, res) => {
-  connection.query("INSERT INTO `Users` (`username`, `password`) VALUES ('"+req.body.username+"', '"+req.body.password+"')", (err, result) => {
+  connection.query("INSERT INTO `Users` (`username`, `password` , `nume`) VALUES ('"+req.body.username+"', '"+req.body.password+"','"+ req.body.nume+"')", (err, result) => {
     if (err) {
       console.log(err)
       res.send(JSON.stringify({status : 'fail'}))
