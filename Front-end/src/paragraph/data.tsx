@@ -18,8 +18,8 @@ const para28 = "Flinchbaugh și colab. (2016) au examinat impactul practicilor d
 
 const paragraph2 ={
     title:"De ce practicile HRM sunt importante pentru managementul cunoștințelor?",
-    paragraphs:[para21 ,para22 , para23 , para24, para25, para26, para27, para28],
-    test:false,
+    paragraphs:[para21 ,para22 , para23 , para24, para25, para26, para27, para28,"Ai terimnat partea teoretica si acum urmeaza sa dai un test sadsadaslfjlfaslfjaslfjaslfjaslfjaslfjaslfjaslfjasflf"],
+    test:true,
 }
 
 const titlu3 = "Capitolul 3- Practici HRM și managementul cunoștințelor";
@@ -50,7 +50,8 @@ const para325 = "În cele din urmă, un număr tot mai mare de cercetători suge
 
 const paragraph3 = {
     title: titlu3,
-    paragraphs: [para31, para32, para33, para34, para35, para36, para37, para38, para39, para311, para312, para313, para314, para315, para316, para317, para318, para319, para320,  para321,  para322,  para323,  para324,  para325 ]
+    paragraphs: [para31, para32, para33, para34, para35, para36, para37, para38, para39, para311, para312, para313, para314, para315, para316, para317, para318, para319, para320,  para321,  para322,  para323,  para324,  para325 ],
+    test:true
 }
 
 const titlu4 = "Capitolul 4- Managementul resurselor umane, retenția personalului și managementul cunoștințelor";
@@ -63,7 +64,8 @@ const para46 = "Alvesson (2000) argumentează faptul că una dintre cele mai bun
 
 const paragraph4 = {
     title: titlu4,
-    paragraphs: [para41, para42, para43, para44, para45, para46]
+    paragraphs: [para41, para42, para43, para44, para45, para46],
+    test:true
 }
 
 const titlu5 = "Capitolul 5- Concluzii (fara intrebari)";
@@ -71,7 +73,8 @@ const para51 = "Focusul central al acestui capitol a fost asupra practicilor HRM
 
 const paragraph5 = {
     title: titlu5,
-    paragraphs: [para51]
+    paragraphs: [para51],
+    test:false
 }
 
 export default [paragraph1 , paragraph2, paragraph3, paragraph4, paragraph5];

@@ -1,8 +1,14 @@
 .modal{
-    background-color: silver;
+    background-color: #ffffff;
     opacity: 1;
     display:flex;
     justify-content: center;
     flex-direction: row;
     align-items: center;
+}
+
+.text{
+        color: red;
+        font-family: "Times New Roman", Times, serif;
+        font-size: 200%;
 }

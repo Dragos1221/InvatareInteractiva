@@ -30,6 +30,7 @@ app.get("/results/:id", (req, res) => {
 });
 
 app.post("/results/:id", (req, res) => {
+  console.log("daaa" , req.params.id)
   connection.query(`INSERT INTO Results (userId, chapter1, chapter2, chapter3, chapter4, chapter5) VALUES(${req.params.id}, ${req.body.chapter1}, ${req.body.chapter2}, ${req.body.chapter3}, ${req.body.chapter4}, ${req.body.chapter5}) ON DUPLICATE KEY UPDATE chapter1=${req.body.chapter1}, chapter2=${req.body.chapter2}, chapter3=${req.body.chapter3}, chapter4=${req.body.chapter4}, chapter5=${req.body.chapter5}`, (err, rows, fields) => {
     if (err) {
       console.log(err);
@@ -43,7 +44,6 @@ app.post("/results/:id", (req, res) => {
 })
 
 app.post("/login", (req, res) => {
-  console.log("daa");
   connection.query(`SELECT * from Users WHERE username='${req.body.username}' AND password='${req.body.password}'`, (err, rows, fields) => {
     if (err) {
       console.log(err);
@@ -69,9 +69,17 @@ app.post("/register", (req, res) => {
       res.send(JSON.stringify({status : 'fail'}))
       return
     }
-    res.send(JSON.stringify({
-      status: 'ok'
-    }))
+    connection.query("INSERT INTO `Results` (`userId`, `chapter1`,`chapter2`,`chapter3`,`chapter4`,`chapter5`) VALUES ('"+result.insertId+"',0,0,0,0,0)", (err, result) => {
+      if (err) {
+        console.log(err)
+        res.send(JSON.stringify({status : 'fail'}))
+        return
+      }
+      res.send(JSON.stringify({
+        status: 'ok',
+        results:result
+      }))
+    })
   })
 })
 

@@ -23,6 +23,7 @@ const styles = createStyles({
 		display:'inline-flex',
 		flexDirection:'column',
 		width:'100%',
+        backgroundImage:"Untitled.png"
     },
     navBar : {
         display: 'block',
@@ -83,7 +84,19 @@ class Main extends React.Component<MainProps, MainState> {
                     <div>
                         <AppBar firstname='Marcel' lastname = 'Popescu' />
                     </div>
-                    <div style = {{position: 'static', marginLeft: '10px', marginTop: '10px'}}>
+                    <div style = {{position: 'static', marginLeft: '10px', marginTop: '10px',width:"100%",height:"100%"}}>
+                        <div style = {{display:"flex",justifyContent:"center"}}>
+                            <img src="ubb.jpg" alt="Girl in a jacket"  width="400px" height="300px"/>
+                        </div>
+                        <div style = {{display:"flex",justifyContent:"space-around"}}>
+                            <img src="mate.png" alt="Girl in a jacket" />
+                            <img src="psiho.png" alt="Girl in a jacket"  />
+                        </div>
+                        <div style = {{display:"flex",justifyContent:"center"}}>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, tempore similique id atque praesentium illo aliquam porro blanditiis vel odio, cum, hic quos facilis ipsam quod asperiores a sapiente pariatur!
+                                </p>
+                        </div>
                     </div>
                 </div>
             </div>

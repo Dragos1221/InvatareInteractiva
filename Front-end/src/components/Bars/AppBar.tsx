@@ -49,7 +49,10 @@ class NavBar extends React.Component<AppBarProps, AppBarState> {
                                         </Typography>
                             )}
                         </div>
-                        <Button variant="contained" color="secondary">Log out</Button>
+                        <Button variant="contained" color="secondary" onClick={(e)=>{
+                            localStorage.clear();
+                            window.location.assign('./');
+                        }}>Log out</Button>
                     </div>
                 </Toolbar>
             </AppBar>
