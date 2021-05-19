@@ -84,7 +84,7 @@ class Main extends React.Component<MainProps, MainState> {
                     <div>
                         <AppBar firstname='Marcel' lastname = 'Popescu' />
                     </div>
-                    <div style = {{position: 'static', marginLeft: '10px', marginTop: '10px',width:"100%",height:"100%"}}>
+                    <div style = {{position: 'static',width:"100%",height:"100%"}}>
                         <div style = {{display:"flex",justifyContent:"center"}}>
                             <img src="ubb.jpg" alt="Girl in a jacket"  width="400px" height="300px"/>
                         </div>
