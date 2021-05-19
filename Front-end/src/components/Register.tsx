@@ -8,6 +8,7 @@ import AssignmentIcon from '@material-ui/icons/Assignment';
 
 export interface RegisterProps {
     classes: any;
+    register: any;
     handleChange: any;
     username: string;
     nume: string;
@@ -17,6 +18,10 @@ export interface RegisterProps {
     isErrorUsername: boolean;
     isErrorPassword: boolean;
     isErrorConfirmPassword: boolean;
+    errorMNume: string;
+    errorMUsername: string;
+    errorMPassword: string;
+    errorMConfirmPassword: string;
 }
  
 export interface RegisterState {
@@ -55,7 +60,7 @@ class Register extends React.Component<RegisterProps, RegisterState> {
 
 
     render() { 
-        const { classes, username, nume, password, isErrorNume, isErrorUsername, isErrorPassword, isErrorConfirmPassword, confirmPassword } = this.props;
+        const { classes, username, nume, password, isErrorNume, isErrorUsername, isErrorPassword, isErrorConfirmPassword, confirmPassword, errorMNume, errorMConfirmPassword, errorMPassword, errorMUsername } = this.props;
         return ( 
             <Container component="main" maxWidth="xs">
   			<CssBaseline />
@@ -81,6 +86,11 @@ class Register extends React.Component<RegisterProps, RegisterState> {
   						onChange={this.handleData('nume')}
   						error={isErrorNume}
   					/>
+                    <div>
+                        <h4 className={isErrorNume ? classes.errMessage : classes.message}>
+                            {errorMNume}
+                        </h4>
+                    </div>
                     <TextField
   						variant="outlined"
   						margin="normal"
@@ -95,6 +105,11 @@ class Register extends React.Component<RegisterProps, RegisterState> {
   						onChange={this.handleData('username')}
   						error={isErrorUsername}
   					/>
+                    <div>
+                        <h4 className={isErrorUsername ? classes.errMessage : classes.message}>
+                            {errorMUsername}
+                        </h4>
+                    </div>
   					<TextField
   						variant="outlined"
   						margin="normal"
@@ -109,6 +124,11 @@ class Register extends React.Component<RegisterProps, RegisterState> {
   						value={password}
   						error={isErrorPassword}
   					/>
+                    <div>
+                        <h4 className={isErrorPassword ? classes.errMessage : classes.message}>
+                            {errorMPassword}
+                        </h4>
+                    </div>
                     <TextField
   						variant="outlined"
   						margin="normal"
@@ -123,8 +143,13 @@ class Register extends React.Component<RegisterProps, RegisterState> {
   						value={confirmPassword}
   						error={isErrorConfirmPassword}
   					/>
+                    <div>
+                        <h4 className={isErrorConfirmPassword ? classes.errMessage : classes.message}>
+                            {errorMConfirmPassword}
+                        </h4>
+                    </div>
                     
-  					<Button
+  					<Button  onClick={this.props.register}
   						className={classes.button}
   						fullWidth
   						variant="contained"
