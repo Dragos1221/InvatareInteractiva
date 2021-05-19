@@ -6,6 +6,7 @@ const paragraph1 = {
     test:false,
 }
 
+const anuntP2 = "Urmeaza sa cititi o sectiune informativa despre importanta practicilor HRM pentru managementului cunostintelor. Dupa ce veti termina de parcurs informatiile veti fi redirectionat automat catre o sectiune de test. In urma testului, daca la mai mult de jumatate din intrebari s-a raspuns corect, casuta din stanga titlului capitolului va fi bifata si veti putea trece la urmatoarea sectiune, in caz negativ, va trebui sa mai dati testul o data."
 const para21 ="Această secțiune ia în considerare două motive separate pentru care practicile HRM pot contribui la apariția comportamentelor și atitudinilor necesare pentru ca inițiativele de management a cunoștințelor să aibă succes. În primul rând, practicile HRM pot fi utilizate pentru a motiva lucrătorii să participe la activități de gestionare a cunoștințelor prin influențarea tipului de factori socio-culturali care au fost descoperiți să fie cruciali pentru participarea angajaților la activitățile de management a cunoștințelor. Al doilea mod în care practicile HRM pot fi utilizate pentru a susține și facilita activitățile de management al cunoștințelor organizaționale este prin dezvoltarea angajamentului organizațional al angajaților, sugerându-se că angajamentul poate fi o variabilă importantă care mediază relația dintre practicile HRM și activitățile de management al cunoștințelor.";
 const para22 ="Disponibilitatea angajaților de a participa la activitățile de gestionare a cunoștințelor organizaționale depinde de percepția angajaților asupra posibilelor efecte pozitive și negative ale acestui lucru. Dacă beneficiile posibile sunt mai mari decât dezavantajele, atunci participarea la activități de management al cunoștințelor va fi mai probabilă. Dacă simt opusul, că consecințele negative le pot depăși pe cele pozitive, sunt mai predispuși să-și „păstreze” cunoștințele și să nu participe la activitățile de gestionare a cunoștințelor. Factorii care determină dacă un angajat își împărtășește cunoștințele sau le păstrează, includ măsura în care aceștia percep dacă interesele lor sunt în conflict cu a angajatorii lor, nivelul de  identificare cu  grupul și a comunității și în ce măsură au încredere în colegii lor. Politicile HRM au potențialul de a juca un rol crucial care influențează modul în care angajații rezolvă astfel de decizii de împărtăși sau a păstra cunoștințe prin motivarea acestora de a participarea la activitățile de gestionare a cunoștințelor. De exemplu, dezvoltarea unor bune relații sociale bazate pe încredere sau dezvoltarea unui puternic sentiment de identitate a echipei ar putea fi realizat prin furnizarea de traininguri care să aducă angajații împreună pentru a învăța colectiv sau prin proiectarea de locuri de muncă care necesită colaborare interpersonală";
 const para23 ="Vorbind despre motivație, este necesar să se facă distincția între motivația intrinsecă și extrinsecă. Motivația intrinsecă se referă la plăcerile și sentimentele pozitive pe care oamenii le pot obține din simpla desfășurare a unei sarcini sau activități. Astfel, dacă un inginer software obține plăcerea din procesul de scriere a codului computerului care este eficient, ei sunt motivați intrinsec să desfășoare această activitate. În contrast, motivația extrinsecă se referă la recompensele externe pe care le obțin oamenii din îndeplinirea unei sarcini, cum ar fi banii. Astfel, un inginer software este extrinsec motivat să scrie codul computerului dacă principalul motiv pentru care o face este pentru salariul pe care îl primește. Astfel, practicile HRM pot fi utilizate pentru a proiecta locuri de muncă care sunt intrinsec interesante și provocatoare și care încurajează și îi motivează pe angajați să își folosească și să împărtășească cunoștințele lor. În schimb, practica HRM, cum ar fi sistemele de recompensă, pot fi utilizată pentru a motiva în mod extrinsec lucrătorii să participe la activități de gestionare a cunoștințelor, oferind stimulente financiare pentru aceasta.";
@@ -17,10 +18,11 @@ const para28 = "Flinchbaugh și colab. (2016) au examinat impactul practicilor d
 
 const paragraph2 ={
     title:"De ce practicile HRM sunt importante pentru managementul cunoștințelor?",
-    paragraphs:[para21 ,para22 , para23 , para24, para25, para26, para27, para28,"Ai terimnat partea teoretica si acum urmeaza sa dai un test sadsadaslfjlfaslfjaslfjaslfjaslfjaslfjaslfjaslfjasflf"],
+    paragraphs:[anuntP2, para21 ,para22 , para23 , para24, para25, para26, para27, para28,"Ai terimnat partea teoretica si acum urmeaza sa dai un test sadsadaslfjlfaslfjaslfjaslfjaslfjaslfjaslfjaslfjasflf"],
     test:true,
 }
 
+const anuntP3 = "Urmeaza sa cititi o sectiune informativa despre practicile HRM si managemantul cunostintelor. Dupa ce veti termina de parcurs informatiile veti fi redirectionati automat catre o sectiune de test. In urma testului, daca la mai mult de jumatate din intrebari s-a raspuns corect, casuta din stanga titlului capitolului va fi bifata si veti putea trece la urmatoarea sectiune, in caz negativ, va trebui sa mai dati testul o data."
 const titlu3 = "Capitolul 3- Practici HRM și managementul cunoștințelor";
 const para31 = "Această secțiune examinează modul în care unele practici specifice HRM pot fi utilizate pentru a modela atitudinile și comportamentele față de activitățile de management al cunoștințelor organizaționale, cu o serie de exemple relevante folosite pentru a ilustra și susține punctele formulate.";
 const para32 = "1. Recrutare și selecție";
@@ -49,10 +51,11 @@ const para325 = "În cele din urmă, un număr tot mai mare de cercetători suge
 
 const paragraph3 = {
     title: titlu3,
-    paragraphs: [para31, para32, para33, para34, para35, para36, para37, para38, para39, para311, para312, para313, para314, para315, para316, para317, para318, para319, para320,  para321,  para322,  para323,  para324,  para325 ],
+    paragraphs: [anuntP3, para31, para32, para33, para34, para35, para36, para37, para38, para39, para311, para312, para313, para314, para315, para316, para317, para318, para319, para320,  para321,  para322,  para323,  para324,  para325 ],
     test:true
 }
 
+const anuntP4 = "Urmeaza sa cititi o sectiune informativa despre managementul resurselor umane. Dupa ce veti termina de parcurs informatiile veti fi redirectionati automat catre o sectiune de test. In urma testului, daca la mai mult de jumatate din intrebari s-a raspuns corect, casuta din stanga titlului capitolului va fi bifata si veti putea trece la urmatoarea sectiune, in caz negativ, va trebui sa mai dati testul o data."
 const titlu4 = "Capitolul 4- Managementul resurselor umane, retenția personalului și managementul cunoștințelor";
 const para41 = "Păstrarea angajaților care dețin cunoștințe valoroase ar trebui să fie un element important din cadrul strategiei de management al cunoștințelor din organizații, pentru a-i motiva să participe la activități de cunoaștere. Acest lucru apare deoarece natura tacită a multor cunoștințe organizaționale se referă la faptul că atunci când angajații părăsesc organizația, aceștia își iau cunoștințele cu ei. Aceasta schimbare de personal poate avea ca și efect pierderea cunoștințelor importante pentru organizație. După cum spunea și Byrne: fără loialitate cunoașterea e pierdută. Oricum, paradoxal, chiar dacă mulți scriitori comentează despre importanța reținerii personalului, foarte puține studii de management al cunoștințelor examinează topicul retenției în detaliu. Câteva dintre studiile care se uită la această problemă sunt considerare aici";
 const para42 = "Acest lucru ridică întrebarea asupra ce ar trebui să facă managementul organizațional pentru a induce nivele ridicate de angajament și loialitate printre angajați. Dezvoltarea nivelelor ridicate de angajament nu sunt ușor și direct de realizat. Oricum, cercetările empirice sugerează un număr de factori ce țin de controlul managerial și care afectează nivelurile de angajament: încrederea angajatului în management, acordarea trainingurilor și nivelele suportului organizational.";
@@ -63,7 +66,7 @@ const para46 = "Alvesson (2000) argumentează faptul că una dintre cele mai bun
 
 const paragraph4 = {
     title: titlu4,
-    paragraphs: [para41, para42, para43, para44, para45, para46],
+    paragraphs: [anuntP4, para41, para42, para43, para44, para45, para46],
     test:true
 }
 
